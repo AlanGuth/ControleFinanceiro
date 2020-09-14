@@ -4,3 +4,11 @@ seguidas a partir do artigo
 https://www.hostinger.com/tutorials/website/how-to-link-a-stylesheet-css-file-to-your-html-file#Reasons-to-Use-CSS-External-Style-Sheet-File-for-HTML-Programming
 
 */
+
+
+#tabelaFinanceira {
+    border: 1px solid black;
+}
+th, tr, td{
+    border: 1px solid grey;
+}
