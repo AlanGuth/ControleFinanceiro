@@ -18,27 +18,26 @@
             <label>Defina os mêses que irá utilizar</label>
         </div>
         <div>
-            <input type="checkbox">Janeiro</input>
-            <input type="checkbox">Fevereiro</input>
-            <input type="checkbox">Março</input>
-            <input type="checkbox">Abril</input>
+            <input type="checkbox" value="Janeiro" id="jan" onclick="arrayDeCheckboxTrue('Janeiro')">Janeiro</input>
+            <input type="checkbox" value="Fevereiro" id="fev"onclick="arrayDeCheckboxTrue('Fevereiro')">Fevereiro</input>
+            <input type="checkbox" value="Março" id="mar"onclick="arrayDeCheckboxTrue('Março')">Março</input>
+            <input type="checkbox" value="Abril" id="abr"onclick="arrayDeCheckboxTrue('Abril')">Abril</input>
         </div>
         <div>
-            <input type="checkbox">Maio</input>
-            <input type="checkbox">Junho</input>
-            <input type="checkbox">Julho</input>
-            <input type="checkbox">Agosto</input>
+            <input type="checkbox" value="Maio" id="mai"onclick="arrayDeCheckboxTrue('Maio')">Maio</input>
+            <input type="checkbox" value="Junho"onclick="arrayDeCheckboxTrue('Junho')">Junho</input>
+            <input type="checkbox" value="Julho"onclick="arrayDeCheckboxTrue('Julho')">Julho</input>
+            <input type="checkbox" value="Agosto">Agosto</input>
         </div>
         <div>
-            <input type="checkbox">Setembro</input>
-            <input type="checkbox">Outubro</input>
-            <input type="checkbox">Novembro</input>
-            <input type="checkbox">Dezembro</input>     
+            <input type="checkbox" value="Setembro"onclick="arrayDeCheckboxTrue('Setembro')">Setembro</input>
+            <input type="checkbox" value="Outubro"onclick="arrayDeCheckboxTrue('Outubro')">Outubro</input>
+            <input type="checkbox" value="Novembro"onclick="arrayDeCheckboxTrue('Novembro')">Novembro</input>
+            <input type="checkbox" value="Dezembro"onclick="arrayDeCheckboxTrue('Dezembro')">Dezembro</input>     
         </div>
-        <div>
+        <div>  
             <!--<input type="button" value="Salvar" onclick="insereAno();"></input>-->
-            <button type="submit" onclick="insereAno(document.getElementById('descAno').value,
-            ['janeiro','fevereiro', 'março']);">Salvar</button>
+            <button type="submit" onclick="insereAno(document.getElementById('descAno').value);">Salvar</button>
         </div>
      </body>
 </html>
