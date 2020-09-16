@@ -1,10 +1,11 @@
-var ano ={
-    descricao: "desc",
-    listaMes: []
+class ano {
+     descricao
+     listaMes = []
 }
 
-
-insereAno = function(valor){
-    ano.descricao === valor;
-    alert(ano.descricao);
+insereAno = function(valor, listames){  
+   var ano1 = new ano()
+   ano1.descricao = valor;
+   ano1.listaMes = listames;
+alert(listames)
 }
