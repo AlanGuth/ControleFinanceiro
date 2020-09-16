@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html>
-    <head>
+    <head>  
+            <script type="text/javascript" src="Prototipo.js"></script>
             <title>AREA DE TESTES</title>
     </head>
     <body>
+        
         <div>
             <label>Cadastre o ano Financeiro</label>
         </div>
         <div> 
            <lable>Digite o ano desejado</lable>
-            <input type="number"></input>
+            <input type="number" id="descAno"></input>
         </div>
         <div>
             <label>Defina os mêses que irá utilizar</label>
@@ -34,7 +36,8 @@
             <input type="checkbox">Dezembro</input>     
         </div>
         <div>
-            <button type="submit" >Salvar</button>
+            <!--<input type="button" value="Salvar" onclick="insereAno();"></input>-->
+            <button type="submit" onclick="insereAno(document.getElementById('descAno').value);">Salvar</button>
         </div>
      </body>
 </html>
