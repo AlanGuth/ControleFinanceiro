@@ -7,5 +7,5 @@ insereAno = function(valor, listames){
    var ano1 = new ano()
    ano1.descricao = valor;
    ano1.listaMes = listames;
-alert(listames)
+alert('Cadastro realizado, Ano: '+ano1.descricao + ', Meses monitorados: ' + ano1.listaMes)
 }
