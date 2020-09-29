@@ -7,37 +7,19 @@
     </head>
     <body>
         
-        <div>
-            <label>Cadastre o ano Financeiro</label>
-        </div>
-        <div> 
-           <lable>Digite o ano desejado</lable>
-            <input type="number" id="descAno"></input>
-        </div>
-        <div>
-            <label>Defina os mêses que irá utilizar</label>
-        </div>
-        <div>
-            <input type="checkbox" value="Janeiro" id="jan" onclick="arrayDeCheckboxTrue('Janeiro')">Janeiro</input>
-            <input type="checkbox" value="Fevereiro" id="fev"onclick="arrayDeCheckboxTrue('Fevereiro')">Fevereiro</input>
-            <input type="checkbox" value="Março" id="mar"onclick="arrayDeCheckboxTrue('Março')">Março</input>
-            <input type="checkbox" value="Abril" id="abr"onclick="arrayDeCheckboxTrue('Abril')">Abril</input>
-        </div>
-        <div>
-            <input type="checkbox" value="Maio" id="mai"onclick="arrayDeCheckboxTrue('Maio')">Maio</input>
-            <input type="checkbox" value="Junho"onclick="arrayDeCheckboxTrue('Junho')">Junho</input>
-            <input type="checkbox" value="Julho"onclick="arrayDeCheckboxTrue('Julho')">Julho</input>
-            <input type="checkbox" value="Agosto">Agosto</input>
-        </div>
-        <div>
-            <input type="checkbox" value="Setembro"onclick="arrayDeCheckboxTrue('Setembro')">Setembro</input>
-            <input type="checkbox" value="Outubro"onclick="arrayDeCheckboxTrue('Outubro')">Outubro</input>
-            <input type="checkbox" value="Novembro"onclick="arrayDeCheckboxTrue('Novembro')">Novembro</input>
-            <input type="checkbox" value="Dezembro"onclick="arrayDeCheckboxTrue('Dezembro')">Dezembro</input>     
-        </div>
-        <div>  
-            <!--<input type="button" value="Salvar" onclick="insereAno();"></input>-->
-            <button type="submit" onclick="insereAno(document.getElementById('descAno').value);">Salvar</button>
+        <div id="entradasEsquerdo">
+            <p id="contadorEntradas"></p>
+            <table>
+                <tr>
+                    <th>Nome da Entrada</th>
+                </tr>
+                <tbody id="entradasLista">
+
+                </tbody>
+            </table>
+            
+
+
         </div>
      </body>
 </html>
