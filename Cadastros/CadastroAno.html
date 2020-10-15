@@ -2,7 +2,6 @@
 <meta charset="UTF-8">
 <html>
     <head>  
-            <script type="text/javascript" src="Cadastro.JS"></script>
             <link rel="stylesheet" type="text/css" href="Cadastro.css" media="screen" />
             <title>Cadastro de Ano</title>
     </head>
@@ -19,22 +18,22 @@
             <label>Defina os mêses que irá utilizar</label>
         </div>
         <div>
-            <input type="checkbox" value="Janeiro" id="jan" onclick="arrayDeCheckboxTrue('Janeiro')">Janeiro</input>
-            <input type="checkbox" value="Fevereiro" id="fev"onclick="arrayDeCheckboxTrue('Fevereiro')">Fevereiro</input>
-            <input type="checkbox" value="Março" id="mar"onclick="arrayDeCheckboxTrue('Março')">Março</input>
-            <input type="checkbox" value="Abril" id="abr"onclick="arrayDeCheckboxTrue('Abril')">Abril</input>
+            <input type="checkbox" value="Janeiro" id="jan" >Janeiro</input>
+            <input type="checkbox" value="Fevereiro" id="fev">Fevereiro</input>
+            <input type="checkbox" value="Março" id="mar">Março</input>
+            <input type="checkbox" value="Abril" id="abr">Abril</input>
         </div>
         <div>
-            <input type="checkbox" value="Maio" id="mai"onclick="arrayDeCheckboxTrue('Maio')">Maio</input>
-            <input type="checkbox" value="Junho"onclick="arrayDeCheckboxTrue('Junho')">Junho</input>
-            <input type="checkbox" value="Julho"onclick="arrayDeCheckboxTrue('Julho')">Julho</input>
-            <input type="checkbox" value="Agosto">Agosto</input>
+            <input type="checkbox" value="Maio" id="mai">Maio</input>
+            <input type="checkbox" value="Junho" id="jun">Junho</input>
+            <input type="checkbox" value="Julho" id="jul">Julho</input>
+            <input type="checkbox" value="Agosto" id="ago">Agosto</input>
         </div>
         <div>
-            <input type="checkbox" value="Setembro"onclick="arrayDeCheckboxTrue('Setembro')">Setembro</input>
-            <input type="checkbox" value="Outubro"onclick="arrayDeCheckboxTrue('Outubro')">Outubro</input>
-            <input type="checkbox" value="Novembro"onclick="arrayDeCheckboxTrue('Novembro')">Novembro</input>
-            <input type="checkbox" value="Dezembro"onclick="arrayDeCheckboxTrue('Dezembro')">Dezembro</input>     
+            <input type="checkbox" value="Setembro" id="set">Setembro</input>
+            <input type="checkbox" value="Outubro" id="out">Outubro</input>
+            <input type="checkbox" value="Novembro" id="nov">Novembro</input>
+            <input type="checkbox" value="Dezembro" id="dez">Dezembro</input>     
         </div>
         <div>  
             <!--<input type="button" value="Salvar" onclick="insereAno();"></input>-->
@@ -43,3 +42,68 @@
         </div>
      </body>
 </html>
+<script>
+class ano {
+    descricao
+    listaMes = []
+}
+var arraymes= [];
+arrayDeCheckboxTrue = function(mes){
+  arraymes.push(mes); 
+}
+
+insereAno = function(valor){
+    var mes1 = document.getElementById("jan");
+    var mes2 = document.getElementById("fev");
+    var mes3 = document.getElementById("mar");
+    var mes4 = document.getElementById("abr");
+    var mes5 = document.getElementById("mai");
+    var mes6 = document.getElementById("jun");
+    var mes7 = document.getElementById("jul");
+    var mes8 = document.getElementById("ago");
+    var mes9 = document.getElementById("set");
+    var mes10 = document.getElementById("out");
+    var mes11 = document.getElementById("nov");
+    var mes12 = document.getElementById("dez");
+    if(mes1.checked){
+        arrayDeCheckboxTrue('Janeiro');
+    }
+    if(mes2.checked){
+        arrayDeCheckboxTrue('Fevereiro');
+    }
+    if(mes3.checked){
+        arrayDeCheckboxTrue('Março');
+    }
+    if(mes4.checked){
+        arrayDeCheckboxTrue('Abril');
+    }
+    if(mes5.checked){
+        arrayDeCheckboxTrue('Maio');
+    }
+    if(mes6.checked){
+        arrayDeCheckboxTrue('Junho');
+    }
+    if(mes7.checked){
+        arrayDeCheckboxTrue('Julho');
+    }
+    if(mes8.checked){
+        arrayDeCheckboxTrue('Agosto');
+    }
+    if(mes9.checked){
+        arrayDeCheckboxTrue('Setembro');
+    }
+    if(mes10.checked){
+        arrayDeCheckboxTrue('Outubro');
+    }
+    if(mes11.checked){
+        arrayDeCheckboxTrue('Novembro');
+    }
+    if(mes12.checked){
+        arrayDeCheckboxTrue('Dezembro');
+    }
+  var ano1 = new ano()
+  ano1.descricao = valor;
+  ano1.listaMes = arraymes;
+  alert('Cadastro realizado, Ano: '+ano1.descricao + ', Meses monitorados: ' + ano1.listaMes)
+}
+</script>
