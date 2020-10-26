@@ -5,6 +5,7 @@
             <script type="text/javascript" src="Prototipo.js"></script>
             <title>AREA DE TESTES</title>
     </head>
+    <p id="contador"></p>
     <body>
         <form>
             <input type="text" id="descEntrada">
@@ -21,10 +22,25 @@
 
                 </tbody>
             </table>
-            
-
-
-        </div>
+        </div>  
+        <script>
+            var app = new function(){
+                this.el = document.getElementById('entradas');
+                this.entradas['salario','vale refeição'];
+                this.contador = new function(data){
+                    var el = document.getElementById('contador');
+                    var nome = 'entrada'
+                    if(data){
+                        if(data > 1){
+                            nome = 'entradas';
+                        }
+                        el.innerHTML = data + ' ' + nome;
+                    } else {
+                     el.innerHTML= 'Sem entradas';       
+                    }
+                };
+            }
+        </script> 
      </body>
 </html>
 
