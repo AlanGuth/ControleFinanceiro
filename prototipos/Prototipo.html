@@ -26,8 +26,9 @@
         <script>
             var app = new function(){
                 this.el = document.getElementById('entradas');
-                this.entradas['salario','vale refeição'];
-                this.contador = new function(data){
+                this.entradas = ['salario','vale refeição'];
+
+                this.counter =  function(data){
                     var el = document.getElementById('contador');
                     var nome = 'entrada'
                     if(data){
@@ -39,7 +40,20 @@
                      el.innerHTML= 'Sem entradas';       
                     }
                 };
+                this.agrupaTudo = function(){
+                    var data = '';
+                    if(this.entradas.length > 0){
+                        for(i=0; i<this.entradas.length; i++ ){
+                            data += '<tr>';
+                            data += '<td>' + this.entradas[i] + '<td>';
+                            data += '</td>';
+                        }
+                    }
+                    this.counter(this.entradas.length);
+                    return this.el.innerHTML = data;
+                };
             }
+            app.agrupaTudo();
         </script> 
      </body>
 </html>
