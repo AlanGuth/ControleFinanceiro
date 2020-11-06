@@ -4,35 +4,48 @@
     <head>  
             <script type="text/javascript" src="Prototipo.js"></script>
             <title>AREA DE TESTES</title>
+            <style>
+                input[type='submit'], button, [aria-label]{
+                  cursor: pointer;
+                }
+                #spoiler{
+                  display: none;
+                }
+              </style>
     </head>
-    <p id="contador"></p>
+    
     <body>
-        <form>
+        <form action="javascript:void(0);" method="POST" onsubmit="app.Add()">
             <input type="text" id="descEntrada">
             <input type="submit" id="addEntrada" value="Adicionar">
-
         </form>
-        <div id="entradasEsquerdo">
-            <p id="contadorEntradas"></p>
+        <div id="spoiler" role="aria-hidden">
+            <form action="javascript:void(0);" method="POST" id="saveEdit">
+                <input type="text" id="editaDescEntrada">
+                <input type="submit" id="editEntrada"/><a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+        <p id="contador"></p>
             <table>
                 <tr>
                     <th>Nome da Entrada</th>
                 </tr>
-                <tbody id="entradasLista">
-
+                <tbody id="entradas">
                 </tbody>
             </table>
-        </div>  
+        
         <script>
             var app = new function(){
                 this.el = document.getElementById('entradas');
                 this.entradas = ['salario','vale refeição'];
 
                 this.counter =  function(data){
+                    
                     var el = document.getElementById('contador');
                     var nome = 'entrada'
                     if(data){
                         if(data > 1){
+                            console.log(data);
                             nome = 'entradas';
                         }
                         el.innerHTML = data + ' ' + nome;
@@ -43,17 +56,48 @@
                 this.agrupaTudo = function(){
                     var data = '';
                     if(this.entradas.length > 0){
-                        for(i=0; i<this.entradas.length; i++ ){
+                        for(i= 0 ; i < this.entradas.length; i++ ){
                             data += '<tr>';
                             data += '<td>' + this.entradas[i] + '<td>';
+                                data += '<td><button onclick="app.Edit(' + i + ')">Edit</button></td>';
                             data += '</td>';
                         }
                     }
                     this.counter(this.entradas.length);
-                    return this.el.innerHTML = data;
+                     return this.el.innerHTML = data; 
                 };
+                this.Add = function(){
+                    el = document.getElementById("descEntrada");
+                    var novaEntrada = el.value;
+                    if(novaEntrada){
+                        this.entradas.push(novaEntrada.trim());
+                        el.value = "";
+                        this.agrupaTudo();
+                    }
+                }
+
+                
+                this.Edit = function(item){
+                    var el = document.getElementById("editaDescEntrada");
+                    el.value = this.entradas[item];
+                    document.getElementById("spoiler").style.display = 'block';
+                    self = this;
+
+                    document.getElementById("saveEdit").onsubmit = function(){
+                        var entrada = el.value;
+                        if(entrada){
+                            self.entradas.splice(item, 1, entrada.trim());
+                            self.agrupaTudo();
+                            CloseInput();
+                        }
+
+                    }
+                }
             }
             app.agrupaTudo();
+            function CloseInput(){
+                    document.getElementById("spoiler").style.display = "none";
+                }
         </script> 
      </body>
 </html>
