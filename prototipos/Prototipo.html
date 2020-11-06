@@ -60,6 +60,7 @@
                             data += '<tr>';
                             data += '<td>' + this.entradas[i] + '<td>';
                                 data += '<td><button onclick="app.Edit(' + i + ')">Edit</button></td>';
+                                data += '<td><button onclick="app.Delete(' + i + ')">Delete</button></td>';
                             data += '</td>';
                         }
                     }
@@ -92,6 +93,10 @@
                         }
 
                     }
+                }
+                this.Delete = function(item){
+                    this.entradas.splice(item, 1);
+                    this.agrupaTudo();
                 }
             }
             app.agrupaTudo();
