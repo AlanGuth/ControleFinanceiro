@@ -15,3 +15,15 @@
   z-index: 1010101010
 
 }
+input[type='submit'], button, [aria-label]{
+  cursor: pointer;
+}
+#spoiler{
+  display: none;
+}
+input[type='submit'], button, [aria-label]{
+  cursor: pointer;
+}
+#spoilerS{
+  display: none;
+}
