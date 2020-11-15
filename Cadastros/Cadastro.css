@@ -3,7 +3,7 @@
     width: 50%;
     float: left;
     height: 100%;
-    background-color: red;
+    background-image: url(download.jpg);
     z-index: 1010101010
 }
 #saidasDireito{
